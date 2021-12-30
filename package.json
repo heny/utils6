@@ -1,0 +1,23 @@
+{
+  "name": "utils6",
+  "version": "0.0.1",
+  "description": "utils",
+  "main": "./src/index.js",
+  "scripts": {
+    "rebuild": "rm -rf dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heny/utils6.git"
+  },
+  "keywords": [
+    "utils",
+    "tools"
+  ],
+  "author": "heny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heny/utils6/issues"
+  },
+  "homepage": "https://github.com/heny/utils6#readme"
+}
