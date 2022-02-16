@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "utils",
   "main": "./src/index.js",
-  "type": "module",
   "scripts": {
     "rebuild": "rm -rf dist && tsc"
   },
@@ -22,6 +21,7 @@
   },
   "homepage": "https://github.com/heny/utils6#readme",
   "dependencies": {
+    "execa": "^6.0.0",
     "simple-git": "^2.48.0"
   }
 }
