@@ -1,10 +1,10 @@
 {
   "name": "utils6",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "utils",
-  "main": "./dist",
+  "main": "./bin/index.js",
   "scripts": {
-    "rebuild": "rm -rf dist && tsc",
+    "rebuild": "rm -rf bin && tsc",
     "p": "npm run rebuild && git-auto publish"
   },
   "repository": {
@@ -26,7 +26,8 @@
     "classnames": "^2.3.1",
     "execa": "^6.0.0",
     "lodash": "^4.17.21",
-    "simple-git": "^2.48.0"
+    "simple-git": "^2.48.0",
+    "utils6": "^1.0.2"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.179"

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./bin/",
     "sourceMap": false,
     "declaration": true,
     "noImplicitAny": false,
@@ -18,5 +18,5 @@
       "*": ["./node_modules/@types", "./types/*"]
     }
   },
-  "include": ["./src/**/*.ts", "types/index.d.ts"]
+  "include": ["src/**/*.ts", "types/index.d.ts", "src/formatNumber.ts"]
 }
