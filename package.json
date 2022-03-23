@@ -1,6 +1,6 @@
 {
   "name": "utils6",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "utils",
   "main": "./src/index.js",
   "scripts": {
@@ -21,7 +21,13 @@
   },
   "homepage": "https://github.com/heny/utils6#readme",
   "dependencies": {
+    "@types/classnames": "^2.3.1",
+    "classnames": "^2.3.1",
     "execa": "^6.0.0",
+    "lodash": "^4.17.21",
     "simple-git": "^2.48.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.179"
   }
 }

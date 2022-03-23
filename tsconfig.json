@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "declarationDir": "./types/",
     "sourceMap": false,
     "declaration": true,
     "noImplicitAny": false,
@@ -14,7 +13,10 @@
     "noUnusedParameters": true,
     "esModuleInterop": true,
     "removeComments": true,
-    "lib": ["dom", "esnext"]
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./node_modules/@types", "./types/*"]
+    }
   },
-  "include": ["./src/**/*.ts"]
+  "include": ["./src/**/*.ts", "types/index.d.ts"]
 }

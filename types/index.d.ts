@@ -1,3 +1,17 @@
-export declare function isMobileOrPc(): boolean;
-export declare function isIE(): boolean;
-export declare function getBytes(str: any): number;
+interface BaseObject<T = any> {
+  [key: string]: T
+}
+
+type Types =
+  | 'Object'
+  | 'Array'
+  | 'String'
+  | 'Number'
+  | 'Boolean'
+  | 'Function'
+  | 'RegExp'
+  | 'Date'
+  | 'Error'
+  | 'Symbol'
+  | 'Null'
+  | 'Undefined'
