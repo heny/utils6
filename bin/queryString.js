@@ -1,19 +1,25 @@
-import _ from 'lodash';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.parse = exports.stringify = void 0;
+var lodash_1 = __importDefault(require("lodash"));
 var encode = encodeURIComponent;
-export function stringify(params) {
+function stringify(params) {
     var parts = [];
-    _.forEach(params, function (val, key) {
+    lodash_1.default.forEach(params, function (val, key) {
         if (val === null || typeof val === 'undefined' || val === '') {
             return;
         }
-        if (!_.isArray(val)) {
+        if (!lodash_1.default.isArray(val)) {
             val = [val];
         }
-        _.forEach(val, function (v) {
-            if (_.isDate(v)) {
+        lodash_1.default.forEach(val, function (v) {
+            if (lodash_1.default.isDate(v)) {
                 v = v.toISOString();
             }
-            else if (_.isObject(v)) {
+            else if (lodash_1.default.isObject(v)) {
                 v = JSON.stringify(v);
             }
             parts.push(encode(key) + "=" + encode(v));
@@ -21,7 +27,8 @@ export function stringify(params) {
     });
     return parts.join('&');
 }
-export function parse(queryStr) {
+exports.stringify = stringify;
+function parse(queryStr) {
     if (!queryStr || !queryStr.length) {
         return {};
     }
@@ -47,3 +54,4 @@ export function parse(queryStr) {
     });
     return queryObj;
 }
+exports.parse = parse;

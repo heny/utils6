@@ -1,8 +1,14 @@
-import partialRight from 'lodash/partialRight';
-import extend from 'lodash/extend';
-export var STORAGE_KEY = 'session';
-export function getStorage(key) {
-    if (key === void 0) { key = STORAGE_KEY; }
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ss = exports.ls = exports.sessionStore = exports.localStore = exports.removeStorage = exports.setStorage = exports.getStorage = exports.STORAGE_KEY = void 0;
+var partialRight_1 = __importDefault(require("lodash/partialRight"));
+var extend_1 = __importDefault(require("lodash/extend"));
+exports.STORAGE_KEY = 'session';
+function getStorage(key) {
+    if (key === void 0) { key = exports.STORAGE_KEY; }
     var session = localStorage.getItem(key);
     var result = {};
     try {
@@ -13,13 +19,16 @@ export function getStorage(key) {
     }
     return result;
 }
-export function setStorage(data, key) {
-    if (key === void 0) { key = STORAGE_KEY; }
+exports.getStorage = getStorage;
+function setStorage(data, key) {
+    if (key === void 0) { key = exports.STORAGE_KEY; }
     var oldSession = getStorage();
-    var newData = extend(oldSession, data);
+    var newData = (0, extend_1.default)(oldSession, data);
     localStorage.setItem(key, encodeURIComponent(JSON.stringify(newData)));
 }
-export var removeStorage = function () { return localStorage.removeItem(STORAGE_KEY); };
+exports.setStorage = setStorage;
+var removeStorage = function () { return localStorage.removeItem(exports.STORAGE_KEY); };
+exports.removeStorage = removeStorage;
 var setStorageItem = function (key, val, storage) {
     storage.setItem(key, encodeURIComponent(JSON.stringify(val)));
 };
@@ -35,15 +44,15 @@ var getStorageItem = function (key, storage) {
 var removeStorageItem = function (key, storage) {
     storage.removeItem(key);
 };
-export var localStore = {
-    set: partialRight(setStorageItem, localStorage),
-    get: partialRight(getStorageItem, localStorage),
-    remove: partialRight(removeStorageItem, localStorage),
+exports.localStore = {
+    set: (0, partialRight_1.default)(setStorageItem, localStorage),
+    get: (0, partialRight_1.default)(getStorageItem, localStorage),
+    remove: (0, partialRight_1.default)(removeStorageItem, localStorage),
 };
-export var sessionStore = {
-    set: partialRight(setStorageItem, sessionStorage),
-    get: partialRight(getStorageItem, sessionStorage),
-    remove: partialRight(removeStorageItem, sessionStorage),
+exports.sessionStore = {
+    set: (0, partialRight_1.default)(setStorageItem, sessionStorage),
+    get: (0, partialRight_1.default)(getStorageItem, sessionStorage),
+    remove: (0, partialRight_1.default)(removeStorageItem, sessionStorage),
 };
 var storageMap = function (storage) { return ({
     get: function (key) {
@@ -64,5 +73,5 @@ var storageMap = function (storage) { return ({
         storage.clear();
     },
 }); };
-export var ls = storageMap(localStorage);
-export var ss = storageMap(sessionStorage);
+exports.ls = storageMap(localStorage);
+exports.ss = storageMap(sessionStorage);

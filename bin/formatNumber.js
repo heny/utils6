@@ -1,5 +1,11 @@
-import assign from 'lodash/assign';
-export function toFixed(value, precision) {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.toLocal = exports.toMoney = exports.toFixed = void 0;
+var assign_1 = __importDefault(require("lodash/assign"));
+function toFixed(value, precision) {
     if (typeof value === 'undefined')
         return '';
     return new Intl.NumberFormat(undefined, {
@@ -8,7 +14,8 @@ export function toFixed(value, precision) {
         maximumFractionDigits: precision,
     }).format(value);
 }
-export function toMoney(value, precision, currency) {
+exports.toFixed = toFixed;
+function toMoney(value, precision, currency) {
     if (precision === void 0) { precision = 2; }
     if (typeof value === 'undefined')
         return '';
@@ -18,12 +25,14 @@ export function toMoney(value, precision, currency) {
         maximumFractionDigits: precision,
     };
     if (currency) {
-        assign(options, { style: 'currency', currency: currency[1] });
+        (0, assign_1.default)(options, { style: 'currency', currency: currency[1] });
     }
     return new Intl.NumberFormat(lang, options).format(value);
 }
-export function toLocal(value, language) {
+exports.toMoney = toMoney;
+function toLocal(value, language) {
     if (typeof value === 'undefined')
         return '';
     return new Intl.NumberFormat(language, { notation: 'compact' }).format(value);
 }
+exports.toLocal = toLocal;
