@@ -1,10 +1,11 @@
 {
   "name": "utils6",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "utils",
-  "main": "./src/index.js",
+  "main": "./dist",
   "scripts": {
-    "rebuild": "rm -rf dist && tsc"
+    "rebuild": "rm -rf dist && tsc",
+    "p": "npm run rebuild && git-auto publish"
   },
   "repository": {
     "type": "git",
