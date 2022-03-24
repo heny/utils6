@@ -1,3 +1,7 @@
+export * as formatNumber from './formatNumber'
+export * as queryString from './queryString'
+export * as storage from './storage'
+export { default as prefix } from './prefix'
 
 /**
  * 判断是移动端还是pc端
