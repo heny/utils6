@@ -22,12 +22,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.types = exports.getBytes = exports.isIE = exports.isMobileOrPc = exports.prefix = exports.storage = exports.queryString = exports.formatNumber = void 0;
+exports.types = exports.getBytes = exports.isIE = exports.isMobileOrPc = exports.templateUrl = exports.prefix = exports.storage = exports.queryString = exports.formatNumber = void 0;
 exports.formatNumber = __importStar(require("./formatNumber"));
 exports.queryString = __importStar(require("./queryString"));
 exports.storage = __importStar(require("./storage"));
 var prefix_1 = require("./prefix");
 Object.defineProperty(exports, "prefix", { enumerable: true, get: function () { return __importDefault(prefix_1).default; } });
+var template_1 = require("./template");
+Object.defineProperty(exports, "templateUrl", { enumerable: true, get: function () { return __importDefault(template_1).default; } });
 function isMobileOrPc() {
     return /Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent);
 }
